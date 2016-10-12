@@ -24,12 +24,14 @@ class CreateUsersTable extends Migration
         });
 
         DB::table('users')->insert([
-            'name' => 'Damir Luketic',
+            'name' => 'Damir Luketić',
             'email' => 'luketic.damir@gmail.com',
             // pass11 with bycript
             'password' => '$2y$10$rXYVwgvg1veWvmjxDSEo4eWIDjHVRLEuk6zVI/SbwJvqjy.zzbE6G',
             'active' => true,
-            'for_activation' => '0'
+            'for_activation' => '0',
+            'created_at' => '2016-10-01',
+            'updated_at' => '2016-10-02'
         ]);
 
         DB::table('users')->insert([
@@ -38,7 +40,9 @@ class CreateUsersTable extends Migration
             // pass22 with bycript
             'password' => '$2y$10$L34XD391OwTWAiImztQCwe8sIGLE03KuUbdIhTVTu61UfPz8wIxWm',
             'active' => true,
-            'for_activation' => '0'
+            'for_activation' => '0',
+            'created_at' => '2016-10-01',
+            'updated_at' => '2016-10-02'
         ]);
     }
 

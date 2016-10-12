@@ -23,7 +23,7 @@ class CreateTasksTable extends Migration
             $table->boolean('status')->default(false);
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
 
         DB::table('tasks')->insert([
@@ -32,7 +32,9 @@ class CreateTasksTable extends Migration
             'start_date'     => '2016-10-15',
             'end_date'       => '2016-10-25',
             'description'    =>'Description of task 01',
-            'status'         => false
+            'status'         => false,
+            'created_at' => '2016-10-01',
+            'updated_at' => '2016-10-02'
         ]);
 
         DB::table('tasks')->insert([
@@ -41,7 +43,9 @@ class CreateTasksTable extends Migration
             'start_date'     => '2016-10-23',
             'end_date'       => '2016-10-25',
             'description'    =>'Description of task 02',
-            'status'         => true
+            'status'         => true,
+            'created_at' => '2016-10-01',
+            'updated_at' => '2016-10-02'
         ]);
 
         DB::table('tasks')->insert([
@@ -50,7 +54,9 @@ class CreateTasksTable extends Migration
             'start_date'     => '2016-11-15',
             'end_date'       => '2016-11-25',
             'description'    =>'Description of task 03',
-            'status'         => false
+            'status'         => false,
+            'created_at' => '2016-10-01',
+            'updated_at' => '2016-10-02'
         ]);
 
         DB::table('tasks')->insert([
@@ -59,7 +65,9 @@ class CreateTasksTable extends Migration
             'start_date'     => '2016-12-15',
             'end_date'       => '2016-12-25',
             'description'    =>'Description of task 04',
-            'status'         => true
+            'status'         => true,
+            'created_at' => '2016-10-01',
+            'updated_at' => '2016-10-02'
         ]);
 
         DB::table('tasks')->insert([
@@ -68,7 +76,9 @@ class CreateTasksTable extends Migration
             'start_date'     => '2016-10-15',
             'end_date'       => '2016-10-25',
             'description'    =>'Description of task 05',
-            'status'         => false
+            'status'         => false,
+            'created_at' => '2016-10-01',
+            'updated_at' => '2016-10-02'
         ]);
 
         DB::table('tasks')->insert([
@@ -77,7 +87,9 @@ class CreateTasksTable extends Migration
             'start_date'     => '2016-10-23',
             'end_date'       => '2016-10-25',
             'description'    =>'Description of task 06',
-            'status'         => false
+            'status'         => false,
+            'created_at' => '2016-10-01',
+            'updated_at' => '2016-10-02'
         ]);
     }
 

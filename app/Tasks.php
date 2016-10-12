@@ -10,7 +10,7 @@ class Tasks extends Model
         'user_id',
         'name',
         'start_date',
-        'end_data',
+        'end_date',
         'description',
         'status'
     ];
