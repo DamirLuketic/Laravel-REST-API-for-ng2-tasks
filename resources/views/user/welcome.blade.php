@@ -11,7 +11,7 @@
 
     <h1>Welcome {{$user_name}}</h1>
 
-    <a href="http://localhost:4200/login"><button class="btn btn-info">Enter</button></a>
+    <a href="http://www.damir-luketic.from.hr/pages/ng2-tasks/login"><button class="btn btn-info">Enter</button></a>
 
 </body>
 </html>

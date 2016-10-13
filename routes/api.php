@@ -60,7 +60,7 @@ Route::group(['middleware' => 'cors'], function(){
             // collect data for e-mail and send mail for confirmation
             $data = [
                 'name' => $name,
-                'link' => 'http://localhost/laravel_rest_api/public/api/confirm_email/' . $user_id . '/' . $input['for_activation'],
+                'link' => 'http://consilium-europa.com/pages/laravel_rest_api/public/api/confirm_email/' . $user_id . '/' . $input['for_activation'],
                 'email' => $email
             ];
 
