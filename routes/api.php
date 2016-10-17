@@ -60,7 +60,7 @@ Route::group(['middleware' => 'cors'], function(){
             // collect data for e-mail and send mail for confirmation
             $data = [
                 'name' => $name,
-                'link' => 'http://consilium-europa.com/pages/laravel_rest_api/public/api/confirm_email/' . $user_id . '/' . $input['for_activation'],
+                'link' => 'http://localhost/laravel_rest_api/public/api/confirm_email/' . $user_id . '/' . $input['for_activation'],
                 'email' => $email
             ];
 
@@ -128,6 +128,25 @@ Route::group(['middleware' => 'cors'], function(){
         return json_encode('Task created.');
         }
     );
+
+    // Route for send contact e-mail;
+    Route::post('/send_mail/{object}', function(Request $request, $object){
+
+        // collect data for e-mail and send mail for confirmation
+        $data = [
+            'name'  => $request->name,
+            'email' => $request->email,
+            'text'  => $request->message
+        ];
+
+        Mail::send('emails.contact', $data, function ($message) use ($data){
+            $message->from($data['email'], $data['name']);
+            $message->to('luketic.damir@gmail.com', 'Damir Luketić')->subject('Contact from "ng2-tasks"');
+        });
+
+        // response after accept/refuse registration
+        return json_encode('send');
+    });
 });
 
 

@@ -9,9 +9,13 @@
 </head>
 <body>
 
-<h1>Welcome {{$user_name}}</h1>
+<h1>Contact from "nt2-tasks"</h1>
 
-<a href="http://localhost:4200/loginRegister"><button class="btn btn-info">Enter</button></a>
+<h4>From: {{$name}}</h4>
+<h4>e-mail: {{$email}}</h4>
+<br />
+<h3>Message:</h3>
+<p>{{$text}}</p>
 
 </body>
 </html>
